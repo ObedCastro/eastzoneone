@@ -1,0 +1,41 @@
+{% extends "admin/base.html" %}
+
+{% load static %}
+
+    {% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+    
+<!-- Colocamos nuestros propios estilos -->
+{% block extrastyle %}
+    <style>
+        #header{
+            background-color: rgba(3, 103, 123, 1);
+        }
+        
+        .imagen{
+            height: 60px;
+            width: 180px;
+            border-radius: 5px;
+            margin-top: -15px;
+            margin-bottom: -10px;
+        }
+        body{
+           /* background: linear-gradient(rgba(3, 103, 123, 1), rgba(30, 203, 203, 0.3));*/
+            background: rgba(213,216,241,1);
+            background: -moz-linear-gradient(left, rgba(213,216,241,1) 0%, rgba(233,232,247,1) 25%, rgba(221,221,243,1) 51%, rgba(249,249,253,1) 91%, rgba(255,255,255,1) 100%);
+            background: -webkit-gradient(left top, right top, color-stop(0%, rgba(213,216,241,1)), color-stop(25%, rgba(233,232,247,1)), color-stop(51%, rgba(221,221,243,1)), color-stop(91%, rgba(249,249,253,1)), color-stop(100%, rgba(255,255,255,1)));
+            background: -webkit-linear-gradient(left, rgba(213,216,241,1) 0%, rgba(233,232,247,1) 25%, rgba(221,221,243,1) 51%, rgba(249,249,253,1) 91%, rgba(255,255,255,1) 100%);
+            background: -o-linear-gradient(left, rgba(213,216,241,1) 0%, rgba(233,232,247,1) 25%, rgba(221,221,243,1) 51%, rgba(249,249,253,1) 91%, rgba(255,255,255,1) 100%);
+            background: -ms-linear-gradient(left, rgba(213,216,241,1) 0%, rgba(233,232,247,1) 25%, rgba(221,221,243,1) 51%, rgba(249,249,253,1) 91%, rgba(255,255,255,1) 100%);
+            background: linear-gradient(to right, rgba(213,216,241,1) 0%, rgba(233,232,247,1) 25%, rgba(221,221,243,1) 51%, rgba(249,249,253,1) 91%, rgba(255,255,255,1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d5d8f1', endColorstr='#ffffff', GradientType=1 );
+        }
+    </style>
+{% endblock %}
+
+{% block branding %}
+    <h1 id="site-name">
+        <a href="{% url 'admin:index' %}">{{ site_header|default:_('Django administration') }}</a>
+    </h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

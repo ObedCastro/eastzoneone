@@ -1,0 +1,43 @@
+{% extends 'core/base.html' %}
+{% load static %}
+   
+ {% block title %} Inicio {% endblock %} 
+    
+{% block content %}
+    <!-- Cabecera -->
+    <section class="page-section clearfix">
+      <div class="container">
+        <div class="intro">
+          <img class="intro-img img-fluid mb-3 mb-lg-0 rounded logo" src="{% static 'core/img/logo.png' %}" alt="">
+          <div class="intro-text left-0 text-center bg-faded p-5 rounded texto-home">
+            <h2 class="section-heading mb-4">
+              <span class="section-heading-upper">Zona Oriente 1</span>
+              <span class="section-heading-lower">Trasciende</span>
+            </h2> 
+            <p class="mb-3"> 2° Corintios 5:20 <br> "Así que, somo embajadores en nombre de Cristo, como si Dios rogase por medio de nosotros: os
+                                                    rogamos en nombre de Cristo: Reconciliaos con Dios."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+   
+    <!-- Mensaje -->
+    <section class="page-section cta">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner text-center rounded">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-upper">Compromiso total</span>
+                <span class="section-heading-lower">¡A Dios sea la gloria!</span>
+              </h2>
+              <p class="mb-0">Un hombre humilde está dispuesto a que su nombre y sus dones sean eclipsados, para que la gloria de Dios incremente.
+                              Él está contento de que los dones y estima de otros le hagan sombra, para que la corona de Cristo brille más. Éste es el lema
+                              del hombre humilde: "Que yo mengüe; que Cristo crezca"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}

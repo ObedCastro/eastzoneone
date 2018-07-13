@@ -1,0 +1,51 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Iglesias{% endblock %}
+   
+{% block content %} 
+     <h1 class="text-center container titulo table-responsive"><strong>Lista de Iglesias</strong></h1>  
+     
+    {% if churchs %}
+     <div class="container tabla">
+        <table class="table  table-hover">
+          <thead class="thead-dark">
+            <tr>
+             <th>#</th>
+              <th>Iglesia</th>
+              <th>Pastor</th>
+              <th>Región</th>
+              <th>Distrito</th>
+              <th>Dirección</th>
+            </tr>
+          </thead>
+          
+          <tbody> 
+            {% for church in churchs reversed %}
+                <tr>
+                  <td class="buscar-nombre">{{ church.name }}</td>
+                  <td>{{ church.pastor }}</td>
+                  <td>{{ church.region }}</td>
+                  <td>{{ church.district }}</td>
+                  <td>{{ church.direction }}</td>
+                </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        
+        <!-- Script de auntoincremento de filas -->
+        <thead class="thead-dark">
+        <script>
+            var tables = document.getElementsByTagName('table');
+            var table = tables[tables.length - 1];
+            var rows = table.rows;
+            for(var i = 1, td; i < rows.length; i++){
+                td = document.createElement('td');
+                td.appendChild(document.createTextNode(i + 0));
+                rows[i].insertBefore(td, rows[i].firstChild);
+            }
+        </script>
+
+         </thead>
+    </div>    
+    {% endif %}
+{% endblock %}
